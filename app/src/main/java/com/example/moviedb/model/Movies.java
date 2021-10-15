@@ -4,6 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
@@ -70,11 +71,6 @@ public class Movies implements Parcelable {
             return new Movies[size];
         }
     };
-
-    public static Movies objectFromData(String str) {
-
-        return new Gson().fromJson(str, Movies.class);
-    }
 
     public boolean isAdult() {
         return adult;
@@ -425,4 +421,5 @@ public class Movies implements Parcelable {
             this.name = name;
         }
     }
+
 }

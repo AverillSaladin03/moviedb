@@ -3,8 +3,10 @@ package com.example.moviedb.repository;
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.moviedb.helper.Const;
+import com.example.moviedb.model.Credits;
 import com.example.moviedb.model.Movies;
 import com.example.moviedb.model.NowPlaying;
+import com.example.moviedb.model.TopRated;
 import com.example.moviedb.retrofit.ApiService;
 
 import retrofit2.Call;
@@ -63,4 +65,39 @@ public class MovieRepository {
         return result;
     }
 
+    //Credits
+    public MutableLiveData<Credits> getCreditsData (String movieId) {
+        final MutableLiveData<Credits> result = new MutableLiveData<>();
+        ApiService.endPoint().getCreditsById(movieId, Const.API_KEY).enqueue(new Callback<Credits>() {
+            @Override
+            public void onResponse(Call<Credits> call, Response<Credits> response) {
+                result.setValue(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<Credits> call, Throwable t) {
+
+            }
+        });
+        return result;
+    }
+
+    //GET ALL MOVIE
+    public MutableLiveData<TopRated> getAllMovie (){
+        final MutableLiveData<TopRated> result = new MutableLiveData<>();
+
+        ApiService.endPoint().getTopRatedMovie(Const.API_KEY).enqueue(new Callback<TopRated>() {
+            @Override
+            public void onResponse(Call<TopRated> call, Response<TopRated> response) {
+                result.setValue(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<TopRated> call, Throwable t) {
+
+            }
+        });
+
+        return result;
+    }
 }

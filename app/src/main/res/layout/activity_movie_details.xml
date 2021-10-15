@@ -17,17 +17,25 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
+    <ImageView
+        android:id="@+id/movdetail_img_back"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_action_name" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/movdetail_cv_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="132dp"
+        android:layout_marginTop="120dp"
         android:layout_marginEnd="12dp"
-        android:layout_marginBottom="4dp"
         app:cardCornerRadius="16dp"
         app:cardElevation="5dp"
-        app:layout_constraintBottom_toTopOf="@+id/movdetail_cv_detail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/movdetail_img_background">
@@ -36,6 +44,17 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingBottom="16dp">
+
+            <RatingBar
+                android:id="@+id/movdetail_ratingbar_score"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:progressTint="@color/gold"
+                android:rating="2.5"
+                app:layout_constraintBottom_toBottomOf="@+id/movdetail_txt_score"
+                app:layout_constraintStart_toStartOf="@+id/movdetail_txt_tagline"
+                app:layout_constraintTop_toTopOf="@+id/movdetail_txt_score" />
 
             <ImageView
                 android:id="@+id/movdetails_img_poster"
@@ -48,15 +67,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_launcher_foreground" />
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                app:layout_constraintBottom_toBottomOf="@+id/movdetail_txt_score"
-                app:layout_constraintStart_toStartOf="@+id/movdetail_txt_tagline"
-                app:layout_constraintTop_toTopOf="@+id/movdetail_txt_score"
-                app:srcCompat="@android:drawable/btn_star_big_on" />
-
             <TextView
                 android:id="@+id/movdetail_txt_title"
                 android:layout_width="0dp"
@@ -66,6 +76,7 @@
                 android:layout_marginEnd="4dp"
                 android:contentDescription="@string/title"
                 android:fontFamily="monospace"
+                android:maxLines="2"
                 android:text="Judul"
                 android:textColor="@color/dark_grey"
                 android:textSize="20sp"
@@ -101,7 +112,7 @@
                 android:text="Score"
                 app:layout_constraintBottom_toBottomOf="@+id/movdetails_img_poster"
                 app:layout_constraintEnd_toEndOf="@+id/movdetail_txt_year"
-                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintStart_toEndOf="@+id/movdetail_ratingbar_score"
                 app:layout_constraintTop_toBottomOf="@+id/movdetail_txt_tagline"
                 app:layout_constraintVertical_bias="1.0" />
 
@@ -111,6 +122,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:fontFamily="monospace"
+                android:maxLines="1"
                 android:text="Tagline"
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="@+id/movdetail_txt_year"
@@ -121,10 +133,21 @@
 
     </androidx.cardview.widget.CardView>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/movdetail_rv_genre"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/movdetail_cv_title"
+        app:layout_constraintStart_toStartOf="@+id/movdetail_cv_title"
+        app:layout_constraintTop_toBottomOf="@+id/movdetail_cv_title" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/movdetail_cv_detail"
         android:layout_width="0dp"
-        android:layout_height="400dp"
+        android:layout_height="0dp"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="32dp"
         android:backgroundTint="@color/gold"
@@ -133,7 +156,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/movdetail_cv_title"
         app:layout_constraintStart_toStartOf="@+id/movdetail_cv_title"
-        app:layout_constraintTop_toBottomOf="@+id/movdetail_img_background">
+        app:layout_constraintTop_toBottomOf="@+id/movdetail_rv_genre">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/scrollView2"
@@ -146,45 +169,10 @@
                 android:paddingBottom="24dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <TextView
-                    android:id="@+id/movdetail_txt_genre"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginEnd="16dp"
-                    android:elegantTextHeight="true"
-                    android:fontFamily="monospace"
-                    android:text="no data"
-                    android:textColor="@color/black"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/movdetail_txt_orititle"
-                    app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
-                    android:fontFamily="monospace"
-                    android:text="Genres"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/movdetail_txt_orititle" />
-
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=" : "
-                    android:textColor="@color/black"
-                    app:layout_constraintStart_toStartOf="@+id/textView9"
-                    app:layout_constraintTop_toTopOf="@+id/textView" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0">
 
                 <TextView
                     android:id="@+id/movdetail_txt_overview"
@@ -295,7 +283,7 @@
                     android:textColor="@color/white"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/movdetail_txt_genre" />
+                    app:layout_constraintTop_toBottomOf="@+id/movdetail_txt_orititle" />
 
                 <TextView
                     android:id="@+id/textView8"
@@ -334,6 +322,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/textView8"
                     app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
