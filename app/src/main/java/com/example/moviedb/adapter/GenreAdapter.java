@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.moviedb.R;
 import com.example.moviedb.model.Movies;
-import com.example.moviedb.view.MovieByGenreActivity;
+import com.example.moviedb.view.activites.MovieByGenreActivity;
 
 import java.util.List;
 

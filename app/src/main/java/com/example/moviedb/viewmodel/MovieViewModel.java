@@ -11,6 +11,7 @@ import com.example.moviedb.model.Credits;
 import com.example.moviedb.model.Movies;
 import com.example.moviedb.model.NowPlaying;
 import com.example.moviedb.model.TopRated;
+import com.example.moviedb.model.UpComing;
 import com.example.moviedb.repository.MovieRepository;
 
 public class MovieViewModel extends AndroidViewModel {
@@ -36,8 +37,8 @@ public class MovieViewModel extends AndroidViewModel {
     //== Begin of View Model Get Now Playing
     private MutableLiveData<NowPlaying> resultGetNowPlaying = new MutableLiveData<>();
 
-    public void getNowPlaying(){
-        resultGetNowPlaying = mRepository.getNowPlayingData();
+    public void getNowPlaying(int page){
+        resultGetNowPlaying = mRepository.getNowPlayingData(page);
     }
     public LiveData <NowPlaying> getResultNowPlaying (){
         return resultGetNowPlaying;
@@ -55,15 +56,24 @@ public class MovieViewModel extends AndroidViewModel {
     }
     //== END
 
-    //== Begin of View Model Get All Movie
+    //== Begin of View Model Get Top Rated Movie
     private MutableLiveData<TopRated> resultGetTopRatedMovies = new MutableLiveData<>();
 
-    public void getTopRatedMovies(){
-        resultGetTopRatedMovies = mRepository.getAllMovie();
+    public void getTopRatedMovies(int page){
+        resultGetTopRatedMovies = mRepository.getTopRated(page);
     }
     public LiveData<TopRated> getResultGetTopRatedMovies(){
         return resultGetTopRatedMovies;
     }
+    //== END
+
+    //== Begin of View Model Get Up Coming Movie
+    private MutableLiveData<UpComing> resultGetUpComingMovies = new MutableLiveData<>();
+
+    public void getUpComingMovies(int page){
+        resultGetUpComingMovies = mRepository.getUpComingMovie(page);
+    }
+    public LiveData<UpComing> getResultGetUpComingMovies(){ return resultGetUpComingMovies; }
     //== END
 
 }

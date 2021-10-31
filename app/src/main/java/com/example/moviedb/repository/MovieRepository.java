@@ -7,6 +7,7 @@ import com.example.moviedb.model.Credits;
 import com.example.moviedb.model.Movies;
 import com.example.moviedb.model.NowPlaying;
 import com.example.moviedb.model.TopRated;
+import com.example.moviedb.model.UpComing;
 import com.example.moviedb.retrofit.ApiService;
 
 import retrofit2.Call;
@@ -47,10 +48,10 @@ public class MovieRepository {
 
 
     //Now Playing
-    public MutableLiveData<NowPlaying> getNowPlayingData (){
+    public MutableLiveData<NowPlaying> getNowPlayingData (int page){
         final MutableLiveData<NowPlaying> result = new MutableLiveData<>();
 
-        ApiService.endPoint().getNowPlaying(Const.API_KEY).enqueue(new Callback<NowPlaying>() {
+        ApiService.endPoint().getNowPlaying(Const.API_KEY, page).enqueue(new Callback<NowPlaying>() {
             @Override
             public void onResponse(Call<NowPlaying> call, Response<NowPlaying> response) {
                 result.setValue(response.body());
@@ -82,11 +83,11 @@ public class MovieRepository {
         return result;
     }
 
-    //GET ALL MOVIE
-    public MutableLiveData<TopRated> getAllMovie (){
+    //GET Top Rated MOVIE
+    public MutableLiveData<TopRated> getTopRated (int page){
         final MutableLiveData<TopRated> result = new MutableLiveData<>();
 
-        ApiService.endPoint().getTopRatedMovie(Const.API_KEY).enqueue(new Callback<TopRated>() {
+        ApiService.endPoint().getTopRatedMovie(Const.API_KEY, page).enqueue(new Callback<TopRated>() {
             @Override
             public void onResponse(Call<TopRated> call, Response<TopRated> response) {
                 result.setValue(response.body());
@@ -94,6 +95,25 @@ public class MovieRepository {
 
             @Override
             public void onFailure(Call<TopRated> call, Throwable t) {
+
+            }
+        });
+
+        return result;
+    }
+
+    //GET Up Coming Movie
+    public MutableLiveData<UpComing> getUpComingMovie (int page){
+        final MutableLiveData<UpComing> result = new MutableLiveData<>();
+
+        ApiService.endPoint().getUpComing(Const.API_KEY, page).enqueue(new Callback<UpComing>() {
+            @Override
+            public void onResponse(Call<UpComing> call, Response<UpComing> response) {
+                result.setValue(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<UpComing> call, Throwable t) {
 
             }
         });

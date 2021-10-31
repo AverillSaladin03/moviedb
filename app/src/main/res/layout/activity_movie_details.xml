@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/dark_grey"
-    tools:context=".view.MovieDetailsActivity">
+    tools:context=".view.activites.MovieDetailsActivity">
 
     <ImageView
         android:id="@+id/movdetail_img_background"
@@ -50,21 +50,23 @@
                 style="@style/Widget.AppCompat.RatingBar.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
                 android:progressTint="@color/gold"
                 android:rating="2.5"
-                app:layout_constraintBottom_toBottomOf="@+id/movdetail_txt_score"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/movdetail_txt_tagline"
-                app:layout_constraintTop_toTopOf="@+id/movdetail_txt_score" />
+                app:layout_constraintTop_toBottomOf="@+id/movdetail_txt_tagline"
+                app:layout_constraintVertical_bias="1.0" />
 
             <ImageView
                 android:id="@+id/movdetails_img_poster"
                 android:layout_width="108dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
-                android:layout_marginTop="8dp"
                 android:contentDescription="@string/img"
+                app:layout_constraintBottom_toBottomOf="@+id/movdetail_ratingbar_score"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/movdetail_txt_title"
                 app:srcCompat="@drawable/ic_launcher_foreground" />
 
             <TextView
@@ -72,7 +74,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="12dp"
                 android:layout_marginEnd="4dp"
                 android:contentDescription="@string/title"
                 android:fontFamily="monospace"
@@ -83,7 +85,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/movdetail_txt_year"
                 app:layout_constraintStart_toEndOf="@+id/movdetails_img_poster"
-                app:layout_constraintTop_toTopOf="@+id/movdetails_img_poster" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/movdetail_txt_year"
@@ -106,14 +108,12 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
                 android:fontFamily="monospace"
                 android:text="Score"
                 app:layout_constraintBottom_toBottomOf="@+id/movdetails_img_poster"
                 app:layout_constraintEnd_toEndOf="@+id/movdetail_txt_year"
                 app:layout_constraintStart_toEndOf="@+id/movdetail_ratingbar_score"
-                app:layout_constraintTop_toBottomOf="@+id/movdetail_txt_tagline"
+                app:layout_constraintTop_toTopOf="@+id/movdetail_ratingbar_score"
                 app:layout_constraintVertical_bias="1.0" />
 
             <TextView

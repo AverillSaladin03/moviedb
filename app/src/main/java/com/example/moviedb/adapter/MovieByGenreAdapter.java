@@ -12,23 +12,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.moviedb.R;
 import com.example.moviedb.helper.Const;
-import com.example.moviedb.model.Movies;
-import com.example.moviedb.model.NowPlaying;
 import com.example.moviedb.model.TopRated;
-import com.example.moviedb.view.MovieDetailsActivity;
+import com.example.moviedb.view.activites.MovieDetailsActivity;
 
 import java.util.Collection;
 import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
-
-import javax.xml.transform.Result;
 
 public class MovieByGenreAdapter extends RecyclerView.Adapter<MovieByGenreAdapter.movieCardViewViewHolder> {
 

@@ -4,6 +4,7 @@ import com.example.moviedb.model.Credits;
 import com.example.moviedb.model.Movies;
 import com.example.moviedb.model.NowPlaying;
 import com.example.moviedb.model.TopRated;
+import com.example.moviedb.model.UpComing;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -24,7 +25,8 @@ public interface ApiEndPoint {
 
     @GET("movie/top_rated")
     Call<TopRated> getTopRatedMovie(
-            @Query("api_key") String apiKey
+            @Query("api_key") String apiKey,
+            @Query("page") int page
     );
 
     @GET("movie/{movie_id}/credits")
@@ -35,7 +37,14 @@ public interface ApiEndPoint {
 
     @GET("movie/now_playing")
     Call<NowPlaying> getNowPlaying(
-            @Query("api_key") String apiKey
+            @Query("api_key") String apiKey,
+            @Query("page") int page
+    );
+
+    @GET("movie/upcoming")
+    Call<UpComing> getUpComing(
+            @Query("api_key") String apiKey,
+            @Query("page") int page
     );
 
 }

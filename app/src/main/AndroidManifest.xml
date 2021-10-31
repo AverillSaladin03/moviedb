@@ -15,25 +15,29 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MovieDB">
         <activity
+            android:name=".view.MainMenuActivity"
+            android:exported="true">
+                <intent-filter>
+                    <action android:name="android.intent.action.MAIN" />
+
+                    <category android:name="android.intent.category.LAUNCHER" />
+                </intent-filter>
+        </activity>
+
+        <activity
             android:name=".adapter.MovieByGenreAdapter"
             android:exported="true" />
         <activity
-            android:name=".view.MovieByGenreActivity"
+            android:name=".view.activites.MovieByGenreActivity"
             android:exported="true" />
         <activity
-            android:name=".view.MovieDetailsActivity"
+            android:name=".view.activites.MovieDetailsActivity"
             android:exported="true" />
         <activity
-            android:name=".view.NowPlayingActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:name=".view.activites.NowPlayingActivity"
+            android:exported="true"/>
         <activity
-            android:name=".view.MainActivity"
+            android:name=".view.activites.MainActivity"
             android:exported="true" />
     </application>
 

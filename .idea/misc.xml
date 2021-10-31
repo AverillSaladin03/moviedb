@@ -3,15 +3,26 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Universitas Ciputra (Kuliah)/Semester 3/Mobile App Dev/Android Studio/MovieDB/app/src/main/res/drawable-anydpi/ic_action_noimage.xml" value="0.20833333333333334" />
         <entry key="..\:/Universitas Ciputra (Kuliah)/Semester 3/Mobile App Dev/Android Studio/MovieDB/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.20833333333333334" />
+        <entry key="..\:/Universitas Ciputra (Kuliah)/Semester 3/Mobile App Dev/Android Studio/MovieDB/app/src/main/res/drawable/ic_movie_now_playing_24.xml" value="0.20833333333333334" />
+        <entry key="..\:/Universitas Ciputra (Kuliah)/Semester 3/Mobile App Dev/Android Studio/MovieDB/app/src/main/res/drawable/ic_movie_upcoming_24.xml" value="0.20833333333333334" />
         <entry key="..\:/Universitas Ciputra (Kuliah)/Semester 3/Mobile App Dev/Android Studio/MovieDB/app/src/main/res/layout/activity_genre.xml" value="0.25" />
         <entry key="..\:/Universitas Ciputra (Kuliah)/Semester 3/Mobile App Dev/Android Studio/MovieDB/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Universitas Ciputra (Kuliah)/Semester 3/Mobile App Dev/Android Studio/MovieDB/app/src/main/res/layout/activity_main_menu.xml" value="0.2" />
         <entry key="..\:/Universitas Ciputra (Kuliah)/Semester 3/Mobile App Dev/Android Studio/MovieDB/app/src/main/res/layout/activity_movie_by_genre_adapter.xml" value="0.1921875" />
         <entry key="..\:/Universitas Ciputra (Kuliah)/Semester 3/Mobile App Dev/Android Studio/MovieDB/app/src/main/res/layout/activity_movie_details.xml" value="0.33" />
         <entry key="..\:/Universitas Ciputra (Kuliah)/Semester 3/Mobile App Dev/Android Studio/MovieDB/app/src/main/res/layout/activity_now_playing.xml" value="0.22" />
         <entry key="..\:/Universitas Ciputra (Kuliah)/Semester 3/Mobile App Dev/Android Studio/MovieDB/app/src/main/res/layout/card_genre.xml" value="0.5" />
         <entry key="..\:/Universitas Ciputra (Kuliah)/Semester 3/Mobile App Dev/Android Studio/MovieDB/app/src/main/res/layout/card_movie_by_genre.xml" value="0.1921875" />
         <entry key="..\:/Universitas Ciputra (Kuliah)/Semester 3/Mobile App Dev/Android Studio/MovieDB/app/src/main/res/layout/card_now_playing.xml" value="0.18" />
+        <entry key="..\:/Universitas Ciputra (Kuliah)/Semester 3/Mobile App Dev/Android Studio/MovieDB/app/src/main/res/layout/card_production_company.xml" value="0.22" />
+        <entry key="..\:/Universitas Ciputra (Kuliah)/Semester 3/Mobile App Dev/Android Studio/MovieDB/app/src/main/res/layout/fragment_movie_details.xml" value="0.33" />
+        <entry key="..\:/Universitas Ciputra (Kuliah)/Semester 3/Mobile App Dev/Android Studio/MovieDB/app/src/main/res/layout/fragment_now_playing.xml" value="0.14791666666666667" />
+        <entry key="..\:/Universitas Ciputra (Kuliah)/Semester 3/Mobile App Dev/Android Studio/MovieDB/app/src/main/res/layout/fragment_top_rated.xml" value="0.1921875" />
+        <entry key="..\:/Universitas Ciputra (Kuliah)/Semester 3/Mobile App Dev/Android Studio/MovieDB/app/src/main/res/layout/fragment_up_coming.xml" value="0.25" />
+        <entry key="..\:/Universitas Ciputra (Kuliah)/Semester 3/Mobile App Dev/Android Studio/MovieDB/app/src/main/res/layout/loading.xml" value="0.33" />
+        <entry key="..\:/Universitas Ciputra (Kuliah)/Semester 3/Mobile App Dev/Android Studio/MovieDB/app/src/main/res/menu/main_menu.xml" value="0.1921875" />
       </map>
     </option>
   </component>

@@ -5,4 +5,10 @@
     <string name="subtitle">Sub Title</string>
     <string name="backdrop">Img Backdrop</string>
     <string name="year">Year</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="now_playing">Now Playing</string>
+    <string name="upcoming">Up Coming</string>
+    <string name="moviedetails">Movie Details</string>
+    <string name="toprated"> Top Rated </string>
 </resources>
